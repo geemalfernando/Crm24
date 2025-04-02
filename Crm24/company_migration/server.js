@@ -18,9 +18,9 @@ const connectDB = async () => {
       serverSelectionTimeoutMS: 5000,
       socketTimeoutMS: 45000
     });
-    console.log('MongoDB Connected');
+    console.log('✅ MongoDB Connected');
   } catch (err) {
-    console.error('MongoDB Connection Error:', err.message);
+    console.error('❌ MongoDB Connection Error:', err.message);
     process.exit(1);
   }
 };
@@ -102,8 +102,8 @@ const startServer = async () => {
 
   const availablePort = await findAvailablePort(PORT);
   const server = app.listen(availablePort, () => {
-    console.log(` Server running on port ${availablePort}`);
-    console.log(`Access via: http://localhost:${availablePort}`);
+    console.log(`🚀 Server running on port ${availablePort}`);
+    console.log(`🔗 Access via: http://localhost:${availablePort}`);
   });
 
   // Graceful shutdown
